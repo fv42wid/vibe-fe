@@ -7,13 +7,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CauseListComponent } from './cause/cause-list/cause-list.component';
+import { CauseService } from './cause/cause.service';
 
 import { AppRoutingModule } from './app-routing.module';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    CauseListComponent,
+    SignupComponent
   ],
   imports: [
     AppRoutingModule,
@@ -22,7 +27,9 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    CauseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
