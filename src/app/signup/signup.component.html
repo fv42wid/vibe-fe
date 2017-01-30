@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-8">
     <h1>Sign Up</h1>
-    <form (ngSubmit)="createUser(user)" #signupForm="ngForm">
+    <form (ngSubmit)="createRegistration(registration)" #signupForm="ngForm">
       <div class="form-group row">
         <label class="col-md-2 col-form-label" for="email">Email</label>
         <div class="col-8">
@@ -12,7 +12,7 @@
                  required
                  name="email"
                  #email='ngModel'
-                 [(ngModel)]="user.email"
+                 [(ngModel)]="registration.email"
                  >
         </div>
       </div>
@@ -26,7 +26,7 @@
                  required
                  name="username"
                  #email="ngModel"
-                 [(ngModel)]="user.username"
+                 [(ngModel)]="registration.username"
                  >
         </div>
       </div>
@@ -40,7 +40,7 @@
                  required
                  name="password"
                  #password="ngModel"
-                 [(ngModel)]="user.password"
+                 [(ngModel)]="registration.password"
                  >
         </div>
       </div>
@@ -54,7 +54,7 @@
                  required
                  name="password_confirmation"
                  #password_confirmation="ngModel"
-                 [(ngModel)]="user.password_confirmation"
+                 [(ngModel)]="registration.password_confirmation"
                  >
         </div>
       </div>
