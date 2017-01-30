@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Angular2TokenService } from 'angular2-token';
 
 @Component({
   moduleId: module.id,
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  constructor(private _tokenService: Angular2TokenService) {
+    this._tokenService.init();
+  }
+  
 }

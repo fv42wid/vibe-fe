@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { Angular2TokenService } from 'angular2-token';
+
 import { CauseListComponent } from './cause/cause-list/cause-list.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SignupComponent } from './signup/signup.component';

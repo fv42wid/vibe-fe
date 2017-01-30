@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { Angular2TokenService } from 'angular2-token';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -28,7 +28,8 @@ import { SignupComponent } from './signup/signup.component';
     NgbModule.forRoot()
   ],
   providers: [
-    CauseService
+    CauseService,
+    Angular2TokenService
   ],
   bootstrap: [AppComponent]
 })
