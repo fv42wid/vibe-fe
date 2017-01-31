@@ -1,32 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
-import { Registration } from './registration';
-import { RegistrationService } from './registration.service';
+import { Angular2TokenService, RegisterData } from 'angular2-token';
 
 @Component({
   moduleId: module.id,
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
-  providers: [ RegistrationService ]
+  styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
   
-  registration = new Registration;
+  private _registerData: RegisterData = <RegisterData>{}
+  private _output: any;;
   submitted: boolean = false;
 
   constructor(
-    private registrationService: RegistrationService
-  ) { }
+    private _tokenService: Angular2TokenService
+  ) {}
 
-  createRegistration(registration) {
+  createRegistration() {
     this.submitted = true;
-    this.registrationService.createRegistration(registration)
-        .subscribe(data => { return true },
-        error => { console.log("Error creating registration");
-              return Observable.throw(error); }
-              )
+    this._output = null;
+    
+     this._tokenService.registerAccount(this._registerData).subscribe(
+       res => {
+         this._registerData = <RegisterData>{};
+         this._output = res;
+       }, error => {
+         this._registerData = <RegisterData>{};
+         this._output = error;
+       }
+     );
   }
 
 }

@@ -13,8 +13,6 @@ import { CauseService } from './cause/cause.service';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './signup/signup.component';
 
-import { RegistrationService } from './signup/registration.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +29,6 @@ import { RegistrationService } from './signup/registration.service';
   ],
   providers: [
     CauseService,
-    RegistrationService,
     Angular2TokenService
   ],
   bootstrap: [AppComponent]
