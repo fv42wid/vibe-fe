@@ -12,13 +12,15 @@ import { CauseService } from './cause/cause.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     CauseListComponent,
-    SignupComponent
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     AppRoutingModule,

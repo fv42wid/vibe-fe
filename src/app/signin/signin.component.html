@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-8">
+    <h1>Sign In</h1>
+    <form (ngSubmit)="signIn()" #signInForm="ngForm">
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label" for="email">Email</label>
+        <input class="form-control"
+               type="text"
+               placeholder="Email"
+               required
+               [(ngModel)]="_signInData.email"
+               name="emai"
+               >
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label" for="password">Password</label>
+        <input class="form-control"
+               type="password"
+               placeholder="Password"
+               required
+               [(ngModel)]="_signInData.password"
+               name="password"
+               >
+
+      </div>
+      <div class="form-group row">
+        <div class="col-8">
+          <button type="submit" class="btn btn-outline-primary">Sign In</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
