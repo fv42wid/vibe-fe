@@ -21,13 +21,14 @@ export class SigninComponent {
       res => {
         this._signInData = <SignInData>{};
         this._output = res;
+        this.router.navigate(['/home']);
       }, error => {
         this._signInData = <SignInData>{};
         this._output = error;
-      }
+      }, () => console.log(this._output)
     );
 
-    this.router.navigate(['/home']);
+    //this.router.navigate(['/home']);
   }
 
 }
