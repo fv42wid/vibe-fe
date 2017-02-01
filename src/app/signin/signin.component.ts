@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Angular2TokenService, SignInData } from 'angular2-token';
 
 @Component({
@@ -11,7 +12,7 @@ export class SigninComponent {
   private _signInData: SignInData = <SignInData>{};
   private _output: any;
 
-  constructor(private _tokenService: Angular2TokenService) { }
+  constructor(private _tokenService: Angular2TokenService, private router: Router) { }
 
   signIn() {
     this._output = null;
@@ -25,6 +26,8 @@ export class SigninComponent {
         this._output = error;
       }
     );
+
+    this.router.navigate(['/home']);
   }
 
 }
