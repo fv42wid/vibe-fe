@@ -11,7 +11,8 @@ export class AppComponent {
 
   constructor(private _tokenService: Angular2TokenService) {
     this._tokenService.init({
-      apiBase: 'http://35.165.61.165'
+      apiBase: 'http://35.165.61.165',
+      signInRedirect: '/home'
     });
   }
   
