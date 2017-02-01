@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
+import { Router } from '@angular/router';
 
-import { Angular2TokenService, RegisterData } from 'angular2-token';
+import { Angular2TokenService, RegisterData, SignInData } from 'angular2-token';
 
 @Component({
   moduleId: module.id,
@@ -11,12 +12,14 @@ import { Angular2TokenService, RegisterData } from 'angular2-token';
 })
 export class SignupComponent {
   
-  private _registerData: RegisterData = <RegisterData>{}
-  private _output: any;;
+  private _registerData: RegisterData = <RegisterData>{};
+  private _signInData: SignInData = <SignInData>{};
+  private _output: any;
   submitted: boolean = false;
 
   constructor(
-    private _tokenService: Angular2TokenService
+    private _tokenService: Angular2TokenService,
+    private router: Router
   ) {}
 
   createRegistration() {
@@ -27,10 +30,11 @@ export class SignupComponent {
        res => {
          this._registerData = <RegisterData>{};
          this._output = res;
+         this.router.navigate(['/signin']);
        }, error => {
          this._registerData = <RegisterData>{};
          this._output = error;
-       }
+       }, () => { console.log(this._output); }
      );
   }
 
